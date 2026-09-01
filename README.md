@@ -6,13 +6,15 @@ This repository is the canonical source for skills distributed through the open 
 
 ## Skills
 
+- [AG-UI protocol](skills/ag-ui-protocol/) helps agents design, implement, review, and debug agent-to-user event streams using AG-UI concepts, vocabulary, and event semantics without assuming full wire compatibility.
 - [ViewComponent for Rails](skills/view-component/) helps agents create, migrate, refactor, review, test, preview, and troubleshoot Rails interfaces built with the ViewComponent gem.
 
 ## Installation
 
-Install the ViewComponent skill in the current project with the [skills CLI](https://skills.sh/):
+Install a skill in the current project with the [skills CLI](https://skills.sh/):
 
 ```bash
+npx skills add lankz/skills --skill ag-ui-protocol
 npx skills add lankz/skills --skill view-component
 ```
 

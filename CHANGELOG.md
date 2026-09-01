@@ -2,6 +2,11 @@
 
 All notable changes to this repository will be documented here.
 
+## 0.3.0 - 2026-09-02
+
+- Add the AG-UI protocol skill, including protocol boundaries, event semantics, messages, tools, state, interrupts, subagents, transports, extensions, and Ruby gateway guidance.
+- Document AG-UI installation and source attribution.
+
 ## 0.2.0 - 2026-09-02
 
 - Add the ViewComponent for Rails skill, including complete authoring, composition, migration, testing, preview, configuration, caching, Turbo Streams, and API guidance.

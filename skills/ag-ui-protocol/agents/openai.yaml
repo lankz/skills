@@ -1,0 +1,4 @@
+interface:
+  display_name: "AG-UI protocol"
+  short_description: "Apply AG-UI semantics to agent and gateway design"
+  default_prompt: "Use $ag-ui-protocol to design or review this agent-to-UI event contract."
