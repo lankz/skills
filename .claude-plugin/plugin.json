@@ -1,0 +1,17 @@
+{
+  "name": "lankz-skills",
+  "version": "0.1.0",
+  "description": "Reusable software-engineering skills by Ben Caldwell.",
+  "author": {
+    "name": "Ben Caldwell",
+    "url": "https://github.com/lankz"
+  },
+  "homepage": "https://github.com/lankz/skills",
+  "repository": "https://github.com/lankz/skills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "software-engineering"
+  ],
+  "skills": "./skills/"
+}

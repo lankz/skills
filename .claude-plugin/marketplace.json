@@ -1,0 +1,20 @@
+{
+  "name": "lankz",
+  "owner": {
+    "name": "Ben Caldwell",
+    "url": "https://github.com/lankz"
+  },
+  "description": "Reusable software-engineering skills by Ben Caldwell.",
+  "plugins": [
+    {
+      "name": "lankz-skills",
+      "source": "./",
+      "description": "Reusable software-engineering skills by Ben Caldwell.",
+      "category": "development",
+      "keywords": [
+        "agent-skills",
+        "software-engineering"
+      ]
+    }
+  ]
+}

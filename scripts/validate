@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repository_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+
+python3 - "$repository_root" <<'PY'
+import json
+import re
+import sys
+from pathlib import Path
+
+root = Path(sys.argv[1])
+
+required_files = [
+    ".agents/plugins/marketplace.json",
+    ".claude-plugin/marketplace.json",
+    ".claude-plugin/plugin.json",
+    ".codex-plugin/plugin.json",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md",
+    "THIRD_PARTY_NOTICES.md",
+]
+
+missing = [path for path in required_files if not (root / path).is_file()]
+if missing:
+    raise SystemExit(f"Missing required files: {', '.join(missing)}")
+
+json_paths = [
+    ".agents/plugins/marketplace.json",
+    ".claude-plugin/marketplace.json",
+    ".claude-plugin/plugin.json",
+    ".codex-plugin/plugin.json",
+]
+documents = {
+    path: json.loads((root / path).read_text(encoding="utf-8"))
+    for path in json_paths
+}
+
+claude = documents[".claude-plugin/plugin.json"]
+codex = documents[".codex-plugin/plugin.json"]
+
+if claude.get("name") != codex.get("name"):
+    raise SystemExit("Claude and Codex plugin names must match")
+
+if claude.get("version") != codex.get("version"):
+    raise SystemExit("Claude and Codex plugin versions must match")
+
+if not re.fullmatch(r"\d+\.\d+\.\d+", str(codex.get("version", ""))):
+    raise SystemExit("Plugin version must use strict semantic versioning")
+
+for manifest_name, manifest in (("Claude", claude), ("Codex", codex)):
+    if manifest.get("skills") != "./skills/":
+        raise SystemExit(f"{manifest_name} plugin must use the canonical ./skills/ directory")
+
+plugin_name = codex["name"]
+codex_entries = documents[".agents/plugins/marketplace.json"].get("plugins", [])
+claude_entries = documents[".claude-plugin/marketplace.json"].get("plugins", [])
+
+if [entry.get("name") for entry in codex_entries] != [plugin_name]:
+    raise SystemExit("Codex marketplace must expose exactly the repository plugin")
+
+if [entry.get("name") for entry in claude_entries] != [plugin_name]:
+    raise SystemExit("Claude marketplace must expose exactly the repository plugin")
+
+skill_files = sorted((root / "skills").glob("*/SKILL.md"))
+for skill_file in skill_files:
+    text = skill_file.read_text(encoding="utf-8")
+    if not text.startswith("---\n"):
+        raise SystemExit(f"{skill_file.relative_to(root)} must begin with YAML frontmatter")
+
+    try:
+        frontmatter = text.split("---\n", 2)[1]
+    except IndexError as error:
+        raise SystemExit(f"{skill_file.relative_to(root)} has incomplete frontmatter") from error
+
+    name_match = re.search(r"^name:\s*([^\n]+)$", frontmatter, re.MULTILINE)
+    description_match = re.search(r"^description:\s*([^\n]+)$", frontmatter, re.MULTILINE)
+    if not name_match or not description_match:
+        raise SystemExit(f"{skill_file.relative_to(root)} needs name and description fields")
+
+    skill_name = name_match.group(1).strip().strip("'\"")
+    if skill_name != skill_file.parent.name:
+        raise SystemExit(
+            f"{skill_file.relative_to(root)} name must match its parent directory"
+        )
+
+if skill_files:
+    print(f"Validated {len(skill_files)} skill(s), plugin metadata, and repository structure.")
+else:
+    print("Validated plugin metadata and repository structure; no skills added yet.")
+PY

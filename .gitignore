@@ -1,0 +1,16 @@
+.DS_Store
+*.log
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Package and tool output
+node_modules/
+skills-lock.json
+
+# Locally installed skills; keep marketplace metadata tracked.
+/.agents/skills/
+/.claude/skills/
+/.codex/skills/

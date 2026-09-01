@@ -1,0 +1,32 @@
+{
+  "name": "lankz-skills",
+  "version": "0.1.0",
+  "description": "Reusable software-engineering skills by Ben Caldwell.",
+  "author": {
+    "name": "Ben Caldwell",
+    "url": "https://github.com/lankz"
+  },
+  "homepage": "https://github.com/lankz/skills",
+  "repository": "https://github.com/lankz/skills",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "codex",
+    "software-engineering"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Lankz Skills",
+    "shortDescription": "Reusable software-engineering skills",
+    "longDescription": "A curated collection of reusable skills for software-engineering agents.",
+    "developerName": "Ben Caldwell",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Skills"
+    ],
+    "defaultPrompt": [
+      "Use the appropriate Lankz skill for this task."
+    ],
+    "websiteURL": "https://github.com/lankz/skills"
+  }
+}
