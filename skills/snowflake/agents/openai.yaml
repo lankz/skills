@@ -1,0 +1,4 @@
+interface:
+  display_name: "Snowflake"
+  short_description: "Build correctly across the Snowflake platform"
+  default_prompt: "Use $snowflake to design and validate this Snowflake change."

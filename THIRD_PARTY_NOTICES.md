@@ -41,3 +41,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Snowflake
+
+The `snowflake` skill is an original synthesis informed by the
+[official Snowflake documentation](https://docs.snowflake.com/), checked on
+2026-09-02. It links to, but does not vendor, Snowflake documentation or code.

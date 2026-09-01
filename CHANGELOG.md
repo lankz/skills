@@ -2,6 +2,11 @@
 
 All notable changes to this repository will be documented here.
 
+## 0.4.0 - 2026-09-02
+
+- Add the Snowflake skill, including SQL dialect, pipelines, Cortex AI and Search, security, lifecycle, performance, cost, clients, APIs, and deployment guidance.
+- Document Snowflake installation and source provenance.
+
 ## 0.3.0 - 2026-09-02
 
 - Add the AG-UI protocol skill, including protocol boundaries, event semantics, messages, tools, state, interrupts, subagents, transports, extensions, and Ruby gateway guidance.
