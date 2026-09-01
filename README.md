@@ -4,6 +4,20 @@ A personal collection of reusable skills for software-engineering agents, mainta
 
 This repository is the canonical source for skills distributed through the open Agent Skills ecosystem and native Claude and Codex plugins. Skills live under `skills/<skill-name>/`.
 
+## Skills
+
+- [ViewComponent for Rails](skills/view-component/) helps agents create, migrate, refactor, review, test, preview, and troubleshoot Rails interfaces built with the ViewComponent gem.
+
+## Installation
+
+Install the ViewComponent skill in the current project with the [skills CLI](https://skills.sh/):
+
+```bash
+npx skills add lankz/skills --skill view-component
+```
+
+Add `--global` to install it for the current user instead.
+
 ## Repository layout
 
 - `skills/` contains the canonical, agent-independent skill packages.
