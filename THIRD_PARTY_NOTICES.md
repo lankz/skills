@@ -47,3 +47,7 @@ SOFTWARE.
 The `snowflake` skill is an original synthesis informed by the
 [official Snowflake documentation](https://docs.snowflake.com/), checked on
 2026-09-02. It links to, but does not vendor, Snowflake documentation or code.
+
+## Agent Rules
+
+The `agent-rules` skill uses the requirement vocabulary of [RFC 2119](https://www.rfc-editor.org/rfc/rfc2119.html) and [RFC 8174](https://www.rfc-editor.org/rfc/rfc8174.html), and heading syntax from [CommonMark 0.31.2](https://spec.commonmark.org/0.31.2/#atx-headings). The rule categories, workflow, and linter are original conventions and implementation; no upstream specification or code is vendored.

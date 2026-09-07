@@ -90,3 +90,5 @@ if skill_files:
 else:
     print("Validated plugin metadata and repository structure; no skills added yet.")
 PY
+
+python3 -B -m unittest discover -s "$repository_root/skills/agent-rules/scripts" -p 'test_*.py'
