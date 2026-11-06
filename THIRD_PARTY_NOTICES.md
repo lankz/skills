@@ -2,7 +2,7 @@
 
 ## ViewComponent
 
-Portions of the `view-component` skill synthesize documentation from the
+Portions of the `rails-view-components` skill synthesize documentation from the
 [ViewComponent project](https://github.com/ViewComponent/view_component) at
 commit `2e6e02d516b645c545eeecb021367047b69a6201`.
 
@@ -44,7 +44,7 @@ SOFTWARE.
 
 ## Snowflake
 
-The `snowflake` skill is an original synthesis informed by the
+The `snowflake-knowledge` skill is an original synthesis informed by the
 [official Snowflake documentation](https://docs.snowflake.com/), checked on
 2026-09-02. It links to, but does not vendor, Snowflake documentation or code.
 

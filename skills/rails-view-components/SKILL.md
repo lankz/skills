@@ -1,5 +1,5 @@
 ---
-name: view-component
+name: rails-view-components
 description: Create, migrate to, refactor, review, test, preview, and troubleshoot Rails interfaces built with the ViewComponent gem. Use for ViewComponent::Base, component templates, slots, collections, lifecycle hooks, previews, caching, Turbo Streams, generators, configuration, component architecture, or ViewComponent adoption.
 ---
 

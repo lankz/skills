@@ -1,4 +1,0 @@
-interface:
-  display_name: "ViewComponent for Rails"
-  short_description: "Build robust Rails ViewComponent interfaces"
-  default_prompt: "Use $view-component to design, migrate, implement, and verify a high-quality Rails ViewComponent."

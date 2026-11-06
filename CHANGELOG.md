@@ -2,6 +2,10 @@
 
 All notable changes to this repository will be documented here.
 
+## 0.6.0 - 2026-11-06
+
+- Rename `view-component` to `rails-view-components` and `snowflake` to `snowflake-knowledge`, including skill invocation prompts, installation instructions, and source notices.
+
 ## 0.5.0 - 2026-09-07
 
 - Add Agent Rules with categorized Markdown, BCP 14 requirement language, active rule maintenance, and advisory file and chain size budgets.

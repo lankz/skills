@@ -1,5 +1,5 @@
 ---
-name: snowflake
+name: snowflake-knowledge
 description: Work with Snowflake-specific SQL and platform features, including data pipelines, Cortex AI and Search, security, cost and performance, Snowflake CLI, APIs, and deployment. Use whenever a task targets Snowflake; do not apply these dialect rules to Snowflake Postgres or an unrelated database.
 ---
 
